@@ -19,7 +19,13 @@ const NewTaskInput = ({ setShowAdd, handleAdd }: Props) => {
 
     return (
         <div className="flex">
-            <div className="form-group">
+            <form
+                onSubmit={(e: any) => {
+                    e.preventDefault();
+                    handleClick();
+                }}
+                className="form-group"
+            >
                 <label htmlFor="newTask">New Task</label>
                 <input
                     type="text"
@@ -28,8 +34,10 @@ const NewTaskInput = ({ setShowAdd, handleAdd }: Props) => {
                     value={newTask}
                     placeholder="New Task"
                     onChange={handleChange}
+                    autoFocus
                 />
-            </div>
+                <input type="submit" hidden />
+            </form>
             <Button text="Add Task" handleClick={handleClick} />
         </div>
     );
