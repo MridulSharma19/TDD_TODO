@@ -13,6 +13,14 @@ const Homepage = () => {
         setShowAdd(!showAdd);
     };
 
+    const handleAdd = (newTask: string) => {
+        const taskList = tasks;
+        const newList = [...taskList, newTask];
+        setTasks(newList);
+        localStorage.setItem("taskList", JSON.stringify(newList));
+        setShowAdd(false);
+    };
+
     const handleRemove = (task: string) => {
         const taskList = tasks;
         const index = taskList.indexOf(task);
@@ -34,7 +42,7 @@ const Homepage = () => {
             <SubHeading />
             <TodoList tasks={tasks} handleRemove={handleRemove} />
             {showAdd ? (
-                <NewTaskInput tasks={tasks} setTasks={setTasks} setShowAdd={setShowAdd} />
+                <NewTaskInput handleAdd={handleAdd} setShowAdd={setShowAdd} />
             ) : (
                 <Button text={"Add New"} handleClick={handleClick} />
             )}
