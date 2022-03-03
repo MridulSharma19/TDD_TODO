@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AddButton from "./addbutton";
+import Button from "./button";
 import Heading from "./heading";
 import NewTaskInput from "./newTaskInput";
 import SubHeading from "./subheading";
@@ -28,7 +28,7 @@ const Homepage = () => {
             {showAdd ? (
                 <NewTaskInput setShowAdd={setShowAdd} />
             ) : (
-                <AddButton text={"Add New"} handleClick={handleClick} />
+                <Button text={"Add New"} handleClick={handleClick} />
             )}
         </div>
     );

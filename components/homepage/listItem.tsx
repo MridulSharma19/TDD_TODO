@@ -1,4 +1,4 @@
-import RemoveButton from "./removebutton";
+import Button from "./button";
 
 interface Props {
     task?: string;
@@ -17,7 +17,7 @@ const ListItem = ({ task }: Props) => {
     return (
         <div className="list-item">
             <div>{task}</div>
-            <RemoveButton handleClick={handleClick} />
+            <Button text="Remove" remove={true} handleClick={handleClick} />
         </div>
     );
 };

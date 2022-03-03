@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddButton from "./addbutton";
+import Button from "./button";
 
 interface Props {
     setShowAdd: Function;
@@ -38,7 +38,7 @@ const NewTaskInput = ({ setShowAdd }: Props) => {
                     onChange={handleChange}
                 />
             </div>
-            <AddButton text="Add Task" handleClick={handleClick} />
+            <Button text="Add Task" handleClick={handleClick} />
         </div>
     );
 };

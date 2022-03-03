@@ -1,16 +1,19 @@
 interface Props {
     handleClick: Function;
+    text: string;
+    remove?: boolean;
 }
-const RemoveButton = ({ handleClick }: Props) => {
+
+const Button = ({ remove, text, handleClick }: Props) => {
     return (
         <button
-            className="remove-button"
+            className={remove ? "red" : ""}
             onClick={() => {
                 handleClick();
             }}
         >
-            Remove
+            {text}
         </button>
     );
 };
-export default RemoveButton;
+export default Button;
