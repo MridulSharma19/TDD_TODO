@@ -2,17 +2,10 @@ import ListItem from "./listItem";
 
 interface Props {
     tasks: string[];
-    setTasks: Function;
+    handleRemove: Function;
 }
 
-const TodoList = ({ tasks, setTasks }: Props) => {
-    const handleRemove = (task: string) => {
-        const taskList = tasks;
-        const index = taskList.indexOf(task);
-        taskList.splice(index, 1);
-        setTasks([...taskList]);
-        localStorage.setItem("taskList", JSON.stringify(taskList));
-    };
+const TodoList = ({ tasks, handleRemove }: Props) => {
     return (
         <>
             {tasks.map((task: string, index: number) => (

@@ -7,10 +7,18 @@ import TodoList from "./todoList";
 
 const Homepage = () => {
     const [showAdd, setShowAdd] = useState(false);
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState<string[]>([]);
 
     const handleClick = () => {
         setShowAdd(!showAdd);
+    };
+
+    const handleRemove = (task: string) => {
+        const taskList = tasks;
+        const index = taskList.indexOf(task);
+        taskList.splice(index, 1);
+        setTasks([...taskList]);
+        localStorage.setItem("taskList", JSON.stringify(taskList));
     };
 
     useEffect(() => {
@@ -24,7 +32,7 @@ const Homepage = () => {
         <div className="home-container">
             <Heading />
             <SubHeading />
-            <TodoList tasks={tasks} setTasks={setTasks} />
+            <TodoList tasks={tasks} handleRemove={handleRemove} />
             {showAdd ? (
                 <NewTaskInput tasks={tasks} setTasks={setTasks} setShowAdd={setShowAdd} />
             ) : (
