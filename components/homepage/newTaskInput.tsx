@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import AddButton from "./addbutton";
 
 interface Props {
