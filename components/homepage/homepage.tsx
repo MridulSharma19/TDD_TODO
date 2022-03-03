@@ -42,7 +42,7 @@ const Homepage = () => {
             <SubHeading />
             <TodoList tasks={tasks} handleRemove={handleRemove} />
             {showAdd ? (
-                <NewTaskInput handleAdd={handleAdd} setShowAdd={setShowAdd} />
+                <NewTaskInput handleAdd={handleAdd} />
             ) : (
                 <Button text={"Add New"} handleClick={handleClick} />
             )}

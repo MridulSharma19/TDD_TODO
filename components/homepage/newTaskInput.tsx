@@ -2,11 +2,10 @@ import { useState } from "react";
 import Button from "./button";
 
 interface Props {
-    setShowAdd: Function;
     handleAdd: Function;
 }
 
-const NewTaskInput = ({ setShowAdd, handleAdd }: Props) => {
+const NewTaskInput = ({ handleAdd }: Props) => {
     const [newTask, setNewTask] = useState("");
 
     const handleChange = (e: any) => {
