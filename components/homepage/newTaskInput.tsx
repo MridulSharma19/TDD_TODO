@@ -37,7 +37,7 @@ const NewTaskInput = ({ handleAdd }: Props) => {
                 />
                 <input type="submit" hidden />
             </form>
-            <Button text="Add Task" handleClick={handleClick} />
+            <Button text="Add Task" handleClick={handleClick} disabled={newTask.length < 1} />
         </div>
     );
 };

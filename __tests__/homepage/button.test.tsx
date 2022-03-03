@@ -21,4 +21,14 @@ describe("Add Button", () => {
 
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
+
+    it("is disabled when needed", () => {
+        const handleClick = jest.fn();
+
+        render(<Button text="Add" handleClick={handleClick} disabled={true} />);
+
+        fireEvent.click(screen.getByRole("button"));
+
+        expect(handleClick).toHaveBeenCalledTimes(0);
+    });
 });
