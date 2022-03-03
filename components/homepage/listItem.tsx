@@ -1,14 +1,13 @@
-import { SyntheticEvent } from "react";
 import RemoveButton from "./removebutton";
 
 interface Props {
     task?: string;
 }
 const ListItem = ({ task }: Props) => {
-    const handleClick = (e: SyntheticEvent) => {};
+    const handleClick = () => {};
 
     return (
-        <div>
+        <div className="list-item">
             <div>{task}</div>
             <RemoveButton handleClick={handleClick} />
         </div>

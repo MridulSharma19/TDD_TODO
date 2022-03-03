@@ -4,6 +4,7 @@ interface Props {
 const RemoveButton = ({ handleClick }: Props) => {
     return (
         <button
+            className="remove-button"
             onClick={() => {
                 handleClick();
             }}
