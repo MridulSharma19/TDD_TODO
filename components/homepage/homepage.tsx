@@ -24,9 +24,9 @@ const Homepage = () => {
         <div className="home-container">
             <Heading />
             <SubHeading />
-            <TodoList tasks={tasks} />
+            <TodoList tasks={tasks} setTasks={setTasks} />
             {showAdd ? (
-                <NewTaskInput setShowAdd={setShowAdd} />
+                <NewTaskInput tasks={tasks} setTasks={setTasks} setShowAdd={setShowAdd} />
             ) : (
                 <Button text={"Add New"} handleClick={handleClick} />
             )}

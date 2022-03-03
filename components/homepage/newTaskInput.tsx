@@ -3,9 +3,11 @@ import Button from "./button";
 
 interface Props {
     setShowAdd: Function;
+    tasks: string[];
+    setTasks: Function;
 }
 
-const NewTaskInput = ({ setShowAdd }: Props) => {
+const NewTaskInput = ({ setShowAdd, tasks, setTasks }: Props) => {
     const [newTask, setNewTask] = useState("");
 
     const handleChange = (e: any) => {
@@ -13,15 +15,12 @@ const NewTaskInput = ({ setShowAdd }: Props) => {
     };
 
     const handleClick = () => {
-        const taskList = localStorage?.getItem("taskList");
-        if (taskList) {
-            const parsedList = JSON.parse(taskList);
-            const newList = [...parsedList, newTask];
-            localStorage.setItem("taskList", JSON.stringify(newList));
-        } else {
-            const newList = [newTask];
-            localStorage.setItem("taskList", JSON.stringify(newList));
-        }
+        const taskList = tasks;
+
+        const newList = [...taskList, newTask];
+        setTasks(newList);
+        localStorage.setItem("taskList", JSON.stringify(newList));
+
         setShowAdd(false);
     };
 
