@@ -1,3 +1,5 @@
+import Heading from "@/components/homepage/heading";
+import SubHeading from "@/components/homepage/subheading";
 import Head from "next/head";
 
 export default function Home() {
@@ -7,6 +9,8 @@ export default function Home() {
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Heading />
+            <SubHeading />
         </div>
     );
 }
