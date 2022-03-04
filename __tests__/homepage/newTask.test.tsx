@@ -24,6 +24,16 @@ describe("New Task", () => {
         expect(input.value).toBe("eat");
     });
 
+    it("input value is trimmed", () => {
+        const handleClick = jest.fn();
+
+        render(<NewTaskInput handleAdd={handleClick} />);
+
+        const input = screen.getByLabelText("New Task");
+        fireEvent.change(input, { target: { value: "eat    " } });
+        expect(input.value).toBe("eat");
+    });
+
     it("has a button", () => {
         const handleClick = jest.fn();
 
@@ -46,17 +56,6 @@ describe("New Task", () => {
         expect(handleClick).toHaveBeenCalledTimes(0);
     });
 
-    it("button doesn't work on empty input", () => {
-        const handleClick = jest.fn();
-
-        render(<NewTaskInput handleAdd={handleClick} />);
-
-        const button = screen.getByRole("button", { name: "Add Task" });
-
-        fireEvent.click(button);
-
-        expect(handleClick).toHaveBeenCalledTimes(0);
-    });
     it("button works with non empty input", () => {
         const handleClick = jest.fn();
 
