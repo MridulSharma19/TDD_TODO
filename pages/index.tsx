@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import Homepage from "@/components/homepage/homepage";
-import { useEffect, useState } from "react";
 import LoginPage from "@/components/loginpage/loginpage";
 import Button from "@/components/homepage/button";
 

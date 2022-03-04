@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Button from "./button";
 import Heading from "./heading";
 import NewTaskInput from "./newTaskInput";
