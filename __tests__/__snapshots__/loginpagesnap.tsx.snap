@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders loginpage unchanged 1`] = `
+<div>
+  <div
+    class="home-container login-page"
+  >
+    <h1>
+      TODO APP
+    </h1>
+    <h2>
+      Please enter your name
+    </h2>
+    <form
+      class="form-group"
+    >
+      <input
+        id="name"
+        name="name"
+        placeholder="Your name"
+        type="text"
+        value=""
+      />
+      <input
+        hidden=""
+        type="submit"
+      />
+    </form>
+    <button
+      disabled=""
+    >
+      Get Started
+    </button>
+  </div>
+</div>
+`;

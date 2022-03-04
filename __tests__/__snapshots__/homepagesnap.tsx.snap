@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="home-container"
+  >
+    <h1>
+      TODO APP
+    </h1>
+    <h2>
+      Hello 
+      Mridul
+    </h2>
+    <div
+      class="list-item"
+    >
+      <span>
+        Go to sleep
+      </span>
+      <button
+        class="red"
+      >
+        Remove
+      </button>
+    </div>
+    <div
+      class="list-item"
+    >
+      <span>
+        Eat
+      </span>
+      <button
+        class="red"
+      >
+        Remove
+      </button>
+    </div>
+    <div
+      class="list-item"
+    >
+      <span>
+        Read a book
+      </span>
+      <button
+        class="red"
+      >
+        Remove
+      </button>
+    </div>
+    <button
+      class=""
+    >
+      Add New
+    </button>
+  </div>
+</div>
+`;
