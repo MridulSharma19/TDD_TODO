@@ -33,12 +33,24 @@ body {
     max-width: 48rem;
 }
 
+.home-container.login-page {
+    max-width: 36rem;
+}
+
 .list-item {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
     font-weight: 500;
     justify-content: space-between;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 0.75rem 2rem;
+}
+
+.list-item span {
+    word-break: break-word;
 }
 
 button.red {
@@ -51,17 +63,10 @@ button {
     border: none;
     background-color: #4caf50;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 10px;
     font-weight: 500;
-}
-
-.add-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    font-weight: 500;
+    font-size: 1.125rem;
 }
 
 .form-group {
@@ -73,14 +78,14 @@ button {
 }
 
 .form-group label {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
 }
 
 .form-group input {
-    font-size: 1rem;
-    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
     border-radius: 8px;
     outline: none;
     border-color: grey;
@@ -89,4 +94,22 @@ button {
 .flex {
     display: flex;
     align-items: center;
+}
+.home-container h1 {
+    text-align: center;
+}
+
+.login-page input {
+    font-size: 1.25rem;
+    margin-right: 0;
+    padding: 0.75rem 1rem;
+}
+
+.login-page .form-group {
+    margin-right: 0;
+}
+
+.login-page button {
+    background-color: #4caf50;
+    width: 100%;
 }

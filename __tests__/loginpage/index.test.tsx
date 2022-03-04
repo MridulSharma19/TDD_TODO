@@ -44,16 +44,6 @@ describe("Login Page", () => {
         expect(input.value).toBe("eat");
     });
 
-    it("input value is trimmed", () => {
-        const handleClick = jest.fn();
-
-        render(<LoginPage setName={handleClick} />);
-
-        const input = screen.getByPlaceholderText("Your name");
-        fireEvent.change(input, { target: { value: "eat    " } });
-        expect(input.value).toBe("eat");
-    });
-
     it("has a button", () => {
         const handleClick = jest.fn();
 

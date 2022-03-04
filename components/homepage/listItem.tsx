@@ -11,7 +11,7 @@ const ListItem = ({ task, handleRemove }: Props) => {
 
     return (
         <div className="list-item">
-            <div>{task}</div>
+            <span>{task}</span>
             <Button text="Remove" remove={true} handleClick={handleClick} />
         </div>
     );

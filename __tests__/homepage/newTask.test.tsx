@@ -24,16 +24,6 @@ describe("New Task", () => {
         expect(input.value).toBe("eat");
     });
 
-    it("input value is trimmed", () => {
-        const handleClick = jest.fn();
-
-        render(<NewTaskInput handleAdd={handleClick} />);
-
-        const input = screen.getByLabelText("New Task");
-        fireEvent.change(input, { target: { value: "eat    " } });
-        expect(input.value).toBe("eat");
-    });
-
     it("has a button", () => {
         const handleClick = jest.fn();
 

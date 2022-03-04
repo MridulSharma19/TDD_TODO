@@ -9,18 +9,18 @@ const LoginPage = ({ setName }: Props) => {
     const [input, setInput] = useState("");
 
     const handleChange = (e: any) => {
-        setInput(e.target.value.trim());
+        setInput(e.target.value);
     };
 
     const handleClick = () => {
-        setName(input);
+        setName(input.trim());
     };
 
     return (
-        <div className="home-container">
+        <div className="home-container login-page">
             <Heading />
-            <h3>Please enter your name</h3>
-            <form>
+            <h2>Please enter your name</h2>
+            <form className="form-group">
                 <input
                     type="text"
                     id="name"

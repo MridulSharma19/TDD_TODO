@@ -3,7 +3,9 @@ import ListItem from "@/components/homepage/listItem";
 
 describe("List Item", () => {
     it("has correct task text", () => {
-        render(<ListItem task={"Go to sleep"} />);
+        const handleClick = jest.fn();
+
+        render(<ListItem handleRemove={handleClick} task={"Go to sleep"} />);
 
         const listItem = screen.getByText("Go to sleep");
 
@@ -11,7 +13,9 @@ describe("List Item", () => {
     });
 
     it("has a button", () => {
-        render(<ListItem task="Go to sleep" />);
+        const handleClick = jest.fn();
+
+        render(<ListItem handleRemove={handleClick} task="Go to sleep" />);
 
         const button = screen.getByRole("button", { name: "Remove" });
 
