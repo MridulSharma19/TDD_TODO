@@ -11,13 +11,14 @@ interface Props {
     handleAdd: Function;
     showAdd: boolean;
     handleClick: Function;
+    name: string;
 }
 
-const Homepage = ({ tasks, handleRemove, handleAdd, showAdd, handleClick }: Props) => {
+const Homepage = ({ tasks, handleRemove, handleAdd, showAdd, handleClick, name }: Props) => {
     return (
         <div className="home-container">
             <Heading />
-            <SubHeading />
+            <SubHeading name={name} />
             <TodoList tasks={tasks} handleRemove={handleRemove} />
             {showAdd ? (
                 <NewTaskInput handleAdd={handleAdd} />
