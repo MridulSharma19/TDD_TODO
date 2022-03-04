@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Homepage from "@/components/homepage/homepage";
 import { useEffect, useState } from "react";
+import LoginPage from "@/components/loginpage/loginpage";
 
 export default function Home() {
     const [showAdd, setShowAdd] = useState(false);
@@ -28,6 +29,11 @@ export default function Home() {
         localStorage.setItem("taskList", JSON.stringify(taskList));
     };
 
+    const handleName = (username: string) => {
+        setName(username);
+        localStorage.setItem("username", username);
+    };
+
     useEffect(() => {
         const taskList = localStorage?.getItem("taskList");
         if (taskList) {
@@ -36,7 +42,7 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        const name = localStorage?.getItem("name");
+        const name = localStorage?.getItem("username");
         if (name) {
             setName(name);
         }
@@ -48,14 +54,18 @@ export default function Home() {
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Homepage
-                tasks={tasks}
-                handleAdd={handleAdd}
-                handleClick={handleClick}
-                handleRemove={handleRemove}
-                showAdd={showAdd}
-                name={name}
-            />
+            {name.length > 0 ? (
+                <Homepage
+                    tasks={tasks}
+                    handleAdd={handleAdd}
+                    handleClick={handleClick}
+                    handleRemove={handleRemove}
+                    showAdd={showAdd}
+                    name={name}
+                />
+            ) : (
+                <LoginPage setName={handleName} />
+            )}
         </div>
     );
 }
