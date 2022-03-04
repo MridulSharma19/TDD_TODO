@@ -8,6 +8,28 @@ body {
         Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     width: 100%;
     min-height: 100vh;
+    font-size: 10px;
+}
+
+@media (min-width: 1400px) {
+    html,
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1400px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1900px) {
+    html,
+    body {
+        font-size: 16px;
+    }
 }
 
 * {
@@ -22,15 +44,24 @@ body {
 }
 
 .container {
-    padding: 3rem 8rem;
+    padding: 2rem 4rem;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+@media (min-width: 640px) {
+    .container {
+        padding: 3rem 8rem;
+    }
+}
+
 .home-container {
     flex: 1;
     max-width: 48rem;
+    width: 100%;
 }
 
 .home-container.login-page {
@@ -112,4 +143,13 @@ button {
 .login-page button {
     background-color: #4caf50;
     width: 100%;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+h2 {
+    word-break: break-all;
 }

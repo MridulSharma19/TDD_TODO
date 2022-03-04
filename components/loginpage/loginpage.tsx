@@ -20,7 +20,13 @@ const LoginPage = ({ setName }: Props) => {
         <div className="home-container login-page">
             <Heading />
             <h2>Please enter your name</h2>
-            <form className="form-group">
+            <form
+                onSubmit={(e: any) => {
+                    e.preventDefault();
+                    handleClick();
+                }}
+                className="form-group"
+            >
                 <input
                     type="text"
                     id="name"

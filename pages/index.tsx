@@ -3,6 +3,7 @@ import Head from "next/head";
 import Homepage from "@/components/homepage/homepage";
 import { useEffect, useState } from "react";
 import LoginPage from "@/components/loginpage/loginpage";
+import Button from "@/components/homepage/button";
 
 export default function Home() {
     const [showAdd, setShowAdd] = useState(false);
@@ -34,6 +35,13 @@ export default function Home() {
         localStorage.setItem("username", username);
     };
 
+    const Signout = () => {
+        localStorage.removeItem("username");
+        localStorage.removeItem("taskList");
+        setName("");
+        setTasks([]);
+    };
+
     useEffect(() => {
         const taskList = localStorage?.getItem("taskList");
         if (taskList) {
@@ -54,6 +62,11 @@ export default function Home() {
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            {name.length > 0 && (
+                <div className="logout-container">
+                    <Button text={"Sign Out"} handleClick={Signout} remove={true} />
+                </div>
+            )}
             {name.length > 0 ? (
                 <Homepage
                     tasks={tasks}
