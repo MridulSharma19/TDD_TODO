@@ -9,7 +9,11 @@ const NewTaskInput = ({ handleAdd }: Props) => {
     const [newTask, setNewTask] = useState("");
 
     const handleChange = (e: any) => {
-        setNewTask(e.target.value);
+        if (e.target.value.length < 251) {
+            setNewTask(e.target.value);
+        } else {
+            setNewTask(e.target.value.substr(0, 250));
+        }
     };
 
     const handleClick = () => {
@@ -34,6 +38,7 @@ const NewTaskInput = ({ handleAdd }: Props) => {
                     placeholder="New Task"
                     onChange={handleChange}
                     autoFocus
+                    maxLength={250}
                 />
                 <input type="submit" hidden />
             </form>

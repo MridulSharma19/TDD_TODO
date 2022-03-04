@@ -61,6 +61,7 @@ exports[`renders homepage unchanged 1`] = `
         </label>
         <input
           id="newTask"
+          maxlength="250"
           name="newTask"
           placeholder="New Task"
           type="text"
