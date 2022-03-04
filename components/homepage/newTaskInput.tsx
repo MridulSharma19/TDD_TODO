@@ -9,7 +9,7 @@ const NewTaskInput = ({ handleAdd }: Props) => {
     const [newTask, setNewTask] = useState("");
 
     const handleChange = (e: any) => {
-        setNewTask(e.target.value);
+        setNewTask(e.target.value.trim());
     };
 
     const handleClick = () => {
