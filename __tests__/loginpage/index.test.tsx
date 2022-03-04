@@ -81,4 +81,24 @@ describe("Login Page", () => {
 
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
+
+    it("returned input is trimmed", () => {
+        let output = "";
+
+        const handleClick = (input: string) => {
+            output = input;
+        };
+
+        render(<LoginPage setName={handleClick} />);
+
+        const input = screen.getByPlaceholderText("Your name");
+
+        fireEvent.change(input, { target: { value: "eat      " } });
+
+        const button = screen.getByRole("button", { name: "Get Started" });
+
+        fireEvent.click(button);
+
+        expect(output).toBe("eat");
+    });
 });

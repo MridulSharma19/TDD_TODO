@@ -61,4 +61,24 @@ describe("New Task", () => {
 
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
+
+    it("returned input is trimmed", () => {
+        let output = "";
+
+        const handleClick = (input: string) => {
+            output = input;
+        };
+
+        render(<NewTaskInput handleAdd={handleClick} />);
+
+        const input = screen.getByLabelText("New Task");
+
+        fireEvent.change(input, { target: { value: "eat      " } });
+
+        const button = screen.getByRole("button", { name: "Add Task" });
+
+        fireEvent.click(button);
+
+        expect(output).toBe("eat");
+    });
 });
